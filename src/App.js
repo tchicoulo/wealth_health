@@ -1,5 +1,20 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CreateEmployee from "./pages/CreateEmployee";
+import EmployeeList from "./pages/EmployeeList";
+import Error from "./pages/Error";
+
 function App() {
-  return <h1>salut</h1>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CreateEmployee />} />
+        <Route path="/employee-list" element={<EmployeeList />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
