@@ -57,7 +57,7 @@ const Form = () => {
       <LabInput label="Last Name" ref={lastNameInput} />
       <DateTimePicker label="Date of Birth" ref={dateOfBirth} />
       <DateTimePicker label="Start Date" ref={startDate} />
-      <div className="adress-area">
+      <div className="address-area">
         <span>Address</span>
         <LabInput label="Street" ref={street} />
         <LabInput label="City" ref={city} />
@@ -65,8 +65,9 @@ const Form = () => {
         <ZipCode label="Zip Code" ref={zipCode} />
       </div>
       <LabInputOption data={departments} label="Department" ref={department} />
-
-      <input type="submit" className="submit-employee" value="Save" />
+      <div className="container-submit">
+        <input type="submit" className="submit-employee" value="Save" />
+      </div>
     </form>
   );
 };

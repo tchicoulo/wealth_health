@@ -34,6 +34,26 @@ const DataTablePlugin = () => {
     }
   };
 
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: "60px",
+      },
+    },
+    headCells: {
+      style: {
+        fontWeight: "bold",
+        fontSize: "15px",
+      },
+    },
+    cells: {
+      style: {
+        paddingLeft: "15px",
+        paddingRight: "10px",
+      },
+    },
+  };
+
   const columns = [
     {
       name: "First Name",
@@ -84,6 +104,7 @@ const DataTablePlugin = () => {
 
   return (
     <div className="data-table-plugin">
+      <label>Search: </label>
       <input
         type={"text"}
         value={filterText}
@@ -92,13 +113,18 @@ const DataTablePlugin = () => {
       />
       {filterText ? (
         <span className="cancel" onClick={handleClear}>
-          X
+          x
         </span>
       ) : (
         ""
       )}
 
-      <DataTable columns={columns} data={filteredItems} pagination />
+      <DataTable
+        columns={columns}
+        data={filteredItems}
+        pagination
+        customStyles={customStyles}
+      />
     </div>
   );
 };

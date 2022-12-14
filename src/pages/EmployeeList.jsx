@@ -7,7 +7,9 @@ const EmployeeList = () => {
     <div className="employee-list">
       <h1>Employee List page</h1>
       <DataTablePlugin />
-      <NavLink to={"/"}>Home</NavLink>
+      <div className="home-button">
+        <NavLink to={"/"}>Home</NavLink>
+      </div>
     </div>
   );
 };

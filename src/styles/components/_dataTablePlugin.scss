@@ -1,0 +1,25 @@
+.data-table-plugin {
+  label {
+    margin-left: 50px;
+  }
+  & input {
+    font-size: 14px;
+    padding-left: 8px;
+    min-width: 140px;
+    width: 15%;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+  }
+  & .cancel {
+    vertical-align: middle;
+    margin-left: 5px;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(219, 62, 62);
+    color: white;
+  }
+}
