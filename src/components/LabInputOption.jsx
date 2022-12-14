@@ -4,7 +4,7 @@ import React from "react";
 const LabInputOption = React.forwardRef((props, ref) => {
   // const [option, setOption] = useState("");
   return (
-    <div className="lab-input-option">
+    <div className="lab-input">
       <label>{props.label}</label>
       <select className="select" ref={ref}>
         {Array.from(props.data).map((element) => (

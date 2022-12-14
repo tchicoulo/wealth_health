@@ -4,6 +4,7 @@ import LabInput from "./LabInput";
 import moment from "moment";
 import states from "../services/dataStates";
 import LabInputOption from "./LabInputOption";
+import ZipCode from "./ZipCode";
 
 const Form = () => {
   const firstNameInput = useRef();
@@ -13,6 +14,7 @@ const Form = () => {
   const street = useRef();
   const city = useRef();
   const state = useRef();
+  const zipCode = useRef();
   const department = useRef();
 
   const departments = [
@@ -25,8 +27,10 @@ const Form = () => {
 
   const saveEmployee = (e) => {
     e.preventDefault();
-    console.log("okok");
-    const data = {
+
+    const employees = JSON.parse(localStorage.getItem("employees")) || [];
+
+    const employee = {
       firstName: firstNameInput.current.value,
       lastName: lastNameInput.current.value,
       dateOfBirth: moment(dateOfBirth.current.props.selected).format("L"),
@@ -34,10 +38,12 @@ const Form = () => {
       street: street.current.value,
       city: city.current.value,
       state: state.current.value,
+      zip: zipCode.current.value,
       department: department.current.value,
     };
 
-    console.log(data);
+    employees.push(employee);
+    localStorage.setItem("employees", JSON.stringify(employees));
   };
 
   return (
@@ -56,12 +62,9 @@ const Form = () => {
         <LabInput label="Street" ref={street} />
         <LabInput label="City" ref={city} />
         <LabInputOption data={states} label="States" ref={state} />
-        <LabInputOption
-          data={departments}
-          label="Department"
-          ref={department}
-        />
+        <ZipCode label="Zip Code" ref={zipCode} />
       </div>
+      <LabInputOption data={departments} label="Department" ref={department} />
 
       <input type="submit" className="submit-employee" value="Save" />
     </form>
