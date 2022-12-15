@@ -109,7 +109,6 @@ const DataTablePlugin = () => {
         type={"text"}
         value={filterText}
         onChange={(e) => setFilterText(e.target.value)}
-        filterText={filterText}
       />
       {filterText ? (
         <span className="cancel" onClick={handleClear}>
