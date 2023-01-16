@@ -6,7 +6,7 @@ import states from "../services/dataStates";
 import LabInputOption from "./LabInputOption";
 import ZipCode from "./ZipCode";
 
-const Form = () => {
+const Form = (data) => {
   const firstNameInput = useRef();
   const lastNameInput = useRef();
   const dateOfBirth = useRef();
@@ -44,31 +44,38 @@ const Form = () => {
 
     employees.push(employee);
     localStorage.setItem("employees", JSON.stringify(employees));
+    data.setModal(true);
   };
 
   return (
-    <form
-      className="form"
-      onSubmit={(e) => {
-        saveEmployee(e);
-      }}
-    >
-      <LabInput label="First Name" ref={firstNameInput} />
-      <LabInput label="Last Name" ref={lastNameInput} />
-      <DateTimePicker label="Date of Birth" ref={dateOfBirth} />
-      <DateTimePicker label="Start Date" ref={startDate} />
-      <div className="address-area">
-        <span>Address</span>
-        <LabInput label="Street" ref={street} />
-        <LabInput label="City" ref={city} />
-        <LabInputOption data={states} label="States" ref={state} />
-        <ZipCode label="Zip Code" ref={zipCode} />
-      </div>
-      <LabInputOption data={departments} label="Department" ref={department} />
-      <div className="container-submit">
-        <input type="submit" className="submit-employee" value="Save" />
-      </div>
-    </form>
+    <div>
+      <form
+        className="form"
+        onSubmit={(e) => {
+          saveEmployee(e);
+        }}
+      >
+        <LabInput label="First Name" ref={firstNameInput} />
+        <LabInput label="Last Name" ref={lastNameInput} />
+        <DateTimePicker label="Date of Birth" ref={dateOfBirth} />
+        <DateTimePicker label="Start Date" ref={startDate} />
+        <div className="address-area">
+          <span>Address</span>
+          <LabInput label="Street" ref={street} />
+          <LabInput label="City" ref={city} />
+          <LabInputOption data={states} label="States" ref={state} />
+          <ZipCode label="Zip Code" ref={zipCode} />
+        </div>
+        <LabInputOption
+          data={departments}
+          label="Department"
+          ref={department}
+        />
+        <div className="container-submit">
+          <input type="submit" className="submit-employee" value="Save" />
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -8,6 +8,9 @@
   border-radius: 5px;
   width: 60%;
   height: 100%;
+  & .title-area {
+    text-align: center;
+  }
   & h1 {
     text-align: center;
     margin: 40px 0;
@@ -25,5 +28,12 @@
 
   & h2 {
     margin: 50px 0 30px 0;
+  }
+
+  @media screen and (max-width: 576px) {
+    border: none;
+    & a {
+      font-size: 12px;
+    }
   }
 }

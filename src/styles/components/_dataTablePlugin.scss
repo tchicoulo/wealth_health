@@ -1,6 +1,9 @@
 .data-table-plugin {
   label {
     margin-left: 50px;
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
   }
   & input {
     font-size: 14px;
