@@ -9,17 +9,17 @@ const CreateEmployee = (data) => {
 
   let background = {
     top: 0,
-    height: "150vh",
-    justifyContent: "center",
-    background: "black",
+    height: "164vh",
+    // justifyContent: "left",
   };
 
   let containerModal = {
     position: "fixed",
     marginBottom: "500px",
-    //   justifyContent: "left",
-    //   marginLeft: "50px",
-    //   paddingLeft: "50px",
+    minWidth: "200px",
+    // justifyContent: "left",
+    // marginLeft: "50px",
+    // paddingLeft: "50px",
   };
 
   // let styleText = {
