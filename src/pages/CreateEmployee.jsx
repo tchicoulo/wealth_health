@@ -10,22 +10,13 @@ const CreateEmployee = (data) => {
   let background = {
     top: 0,
     height: "164vh",
-    // justifyContent: "left",
   };
 
   let containerModal = {
     position: "fixed",
     marginBottom: "500px",
     minWidth: "200px",
-    // justifyContent: "left",
-    // marginLeft: "50px",
-    // paddingLeft: "50px",
   };
-
-  // let styleText = {
-  //   color: "green",
-  //   textDecoration: "underline",
-  // };
 
   return (
     <div>
@@ -35,7 +26,6 @@ const CreateEmployee = (data) => {
           handleClick={() => setModal(false)}
           background={background}
           containerModal={containerModal}
-          // styleText={styleText}
         />
       ) : null}
       <div className="create-employee">

@@ -4,7 +4,7 @@ const ZipCode = React.forwardRef((props, ref) => {
   return (
     <div className="lab-input">
       <label>{props.label}</label>
-      <input type="number" max={99999} ref={ref} />
+      <input type="number" ref={ref} />
     </div>
   );
 });

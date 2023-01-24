@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<CreateEmployee />} />
         <Route path="/employee-list" element={<EmployeeList />} />
         <Route path="/error" element={<Error />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );

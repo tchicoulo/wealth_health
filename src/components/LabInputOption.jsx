@@ -1,8 +1,6 @@
 import React from "react";
-// import { useState } from "react";
 
 const LabInputOption = React.forwardRef((props, ref) => {
-  // const [option, setOption] = useState("");
   return (
     <div className="lab-input">
       <label>{props.label}</label>
