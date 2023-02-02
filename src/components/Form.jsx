@@ -6,6 +6,11 @@ import states from "../services/dataStates";
 import LabInputOption from "./LabInputOption";
 import ZipCode from "./ZipCode";
 
+/**
+ * Form component to add new informations
+ * @param {boolean} data - data true/false for show/hide the modal library
+ */
+
 const Form = (data) => {
   const firstNameInput = useRef();
   const lastNameInput = useRef();

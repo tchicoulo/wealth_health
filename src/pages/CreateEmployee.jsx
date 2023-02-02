@@ -4,6 +4,11 @@ import { NavLink } from "react-router-dom";
 import Form from "../components/Form";
 import ModalDialog from "stv-modal-plugin";
 
+/**
+ * CreateEmployee component page to add new informations
+ * @param {boolean} data - data true/false for show/hide the modal library passed in the children component "Form"
+ */
+
 const CreateEmployee = (data) => {
   const [modal, setModal] = useState(false);
 
@@ -31,7 +36,10 @@ const CreateEmployee = (data) => {
       <div className="create-employee">
         <div className="title-area">
           <h1>HRnet</h1>
-          <NavLink to={"/employee-list"}>View Current Employees</NavLink>
+          {localStorage.getItem("employees") ? (
+            <NavLink to={"/employee-list"}>View Current Employees</NavLink>
+          ) : null}
+
           <h2>Create Employee</h2>
         </div>
         <div className="form-area">
